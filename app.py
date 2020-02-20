@@ -1,10 +1,9 @@
+import logging
 import urllib
 import webbrowser
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import sessionmaker
-import logging
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -127,7 +126,7 @@ def submit():
         email = request.form['email']
         cellphone = request.form['telefone']
         notes = request.form['message']
-        item = Item(name=fname, surname=lname, type_item=type_doc, reference=reference, province=province,
+        item = Item(fname=fname, lname=lname, type_item=type_doc, reference=reference, province=province,
                     status=status, email=email,
                     cellphone=cellphone, note=notes)
         db.session.add(item)
