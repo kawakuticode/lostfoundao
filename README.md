@@ -1,2 +1,3 @@
 # lostfoundao
-webapp for lost and found items. 
+future webapp for lost and found items in angola.   
+
