@@ -132,7 +132,7 @@ def submit():
         db.session.commit()
 
         if (item.id):
-            message = "adicionado a nossa base de dados com sucess"
+            message = "adicionado a nossa base de dados com sucesso"
             return render_template("sucess.html", message=message, lost=item_l, found=item_f, docs=type_doc,
                                    others=type_other)
         else:
