@@ -32,7 +32,7 @@ def create_table(conn, create_table_sql):
 
 def insert_temp(conn, data_content) :
 
-    sql_data_input = """ INSERT INTO item (fname,lname , type_item,reference,province,status,cellphone,email , note) VALUES (?,?,?,?,?,?,?,?,?) ;"""
+    sql_data_input = """ INSERT INTO item (fname,lname , type_item,reference,province,status,cellphone,email,note) VALUES (?,?,?,?,?,?,?,?,?) ;"""
     try:
         cur = conn.cursor()
         cur.execute(sql_data_input,data_content)
@@ -53,7 +53,7 @@ def main():
                                         fname text NOT NULL,
                                         lname text NOT NULL,
                                         type_item text NOT NULL,
-                                        reference text NOT NULL,
+                                        reference text ,
                                         province text NOT NULL,
                                         status text NOT NULL,
                                         cellphone text NOT NULL, 
