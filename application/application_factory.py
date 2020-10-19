@@ -17,7 +17,6 @@ def create_app():
 
     with app.app_context():
         # Include our Routes
-
         database.create_all()  # Create sql tables for our data models
 
     return app
