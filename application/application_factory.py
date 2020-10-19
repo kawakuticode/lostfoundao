@@ -11,6 +11,7 @@ mi = Migrate()
 def create_app():
     """Initialize the core application."""
     app = Flask(__name__, instance_relative_config=False)
+    # app.config.from_object('config.DevConfig')
     app.config.from_object('config.ProdConfig')
 
     database.init_app(app)
@@ -21,6 +22,7 @@ def create_app():
         # Include our Routes
         from application.service import routes
         from .models.item import Item
+
         database.create_all()  # Create sql tables for our data models
 
     return app
