@@ -4,7 +4,7 @@ from application.application_factory import ma
 
 class Item(database.Model):
     __tablename__ = 'items'
-    # __table_args__ = {'extend_existing': True}
+    __table_args__ = {'extend_existing': True}
     id = database.Column(database.INTEGER, primary_key=True)
     fname = database.Column(database.TEXT)
     lname = database.Column(database.TEXT)
