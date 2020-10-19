@@ -1,7 +1,7 @@
 "in future will use env variables for config"
 
 DATABASE_URI = 'sqlite:///dbase\LFDB.db'
-PROD_DATABASE_URI = 'sqlite:///dbase\LFDB.db'
+PROD_DATABASE_URI = 'sqlite:///postgresql-rectangular-60677'
 DEV_DATABASE_URI = 'sqlite:///dbase\LFDB.db'
 
 
