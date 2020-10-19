@@ -1,11 +1,12 @@
 from flask import Flask
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # Globally accessible libraries
 database = SQLAlchemy()
 ma = Marshmallow()
-
+mi = Migrate()
 
 def create_app():
     """Initialize the core application."""
@@ -14,6 +15,7 @@ def create_app():
 
     database.init_app(app)
     ma.init_app(app)
+    mi.init_app(app, database)
 
     with app.app_context():
         # Include our Routes
