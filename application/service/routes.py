@@ -35,24 +35,24 @@ def valid_parameters(param):
     return result
 
 
-@app.route('/')
+@app.route('/', methods=["GET"])
 @app.route('/home')
 def home():
     return render_template("index.html", lost=item_l, found=item_f, docs=type_doc, others=type_other)
 
 
-@app.route('/about')
+@app.route('/about', methods=["GET"])
 def about():
     return render_template("about.html", lost=item_l, found=item_f, docs=type_doc, others=type_other)
 
 
-@app.route('/lost')
+@app.route('/lost', methods=["GET"])
 def lost():
     result = Item.query.filter_by(status='Perdido').all()
     return render_template("lost.html", items_perdidos=result)
 
 
-@app.route('/found')
+@app.route('/found', methods=["GET"])
 def found():
     result = Item.query.filter_by(status='Encontrado').all()
     return render_template("found.html", items_encontrados=result)
