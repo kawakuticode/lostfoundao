@@ -17,6 +17,8 @@ def create_app():
 
     with app.app_context():
         # Include our Routes
+        from application.service import routes
+        from .models.item import Item
         database.create_all()  # Create sql tables for our data models
 
     return app
