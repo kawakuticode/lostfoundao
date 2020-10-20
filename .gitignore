@@ -1,8 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
-venv/
-.env
-
-*.pyc
-__pycache__/
-
 instance/
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+getting-started/*
+__pycache__/

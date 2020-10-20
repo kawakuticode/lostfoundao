@@ -18,6 +18,8 @@ def create_app():
     ma.init_app(app)
     mi.init_app(app, database)
 
+    print(app.config)
+
     with app.app_context():
         # Include our Routes
         from application.service import routes
